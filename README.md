@@ -9,6 +9,7 @@ _______________________________________________________________
 
 # Recommended use docker compose to run and test de applications
 ## Instructions on READAME from project API
+https://github.com/wenceslau/wn-sales-api/blob/main/README.md
 _______________________________________________________________
 
 # INFORMATION
@@ -34,3 +35,9 @@ Node 16.17
 
 ### (RECOMMENDED USE DOCKER FOR THE TEST, Instructions on READAME project API )
 ________________________________________________________________________________
+
+# DOCKER COMPOSE
+
+After follow all the instructions on README repository https://github.com/wenceslau/wn-sales-api/blob/main/README.md
+
+It just go to http://localhost:8080/ui/ to access the application
