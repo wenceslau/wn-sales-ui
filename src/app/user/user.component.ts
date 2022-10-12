@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../app.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +12,15 @@ export class UserComponent implements OnInit {
 
   message: string | undefined;
 
-  constructor(private http: HttpClient, public appService: AppService) {}
+  constructor(private http: HttpClient, public appService: AppService,private activeRoute: ActivatedRoute, private router: Router) {
+  }
+
 
   ngOnInit() {
+    let par = this.router.url.split('=')[1];
+    if (par){
+      this.router.navigate(['/payment/'+par]);
+    }
     this.listUser();
     this.listAccount();
     this.listProduct();

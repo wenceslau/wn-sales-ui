@@ -9,16 +9,20 @@ import { AppService } from '../app.service';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(public appService: AppService, private router: ActivatedRoute) {}
+  constructor(public appService: AppService, private activeRoute: ActivatedRoute) {}
 
   uuid: string | undefined;
 
   payment: Payment = new Payment()
 
-  message: string | undefined;
+  message: string = '';
   
   ngOnInit(): void {
-    this.uuid = this.router.snapshot.params['uuid'];
+    let value = this.activeRoute.snapshot.paramMap.get('id')
+    console.log('Value: '+ value)
+    this.uuid = this.activeRoute.snapshot.params['id'];
+    console.log('UUID: '+ this.uuid)
+
     this.listPayment(this.uuid)
   }
 
@@ -27,7 +31,7 @@ export class PaymentComponent implements OnInit {
       .get('/payment/'+uuid)
       .then((result) => {
         this.payment = result;
-        this.message = undefined;
+        this.message = '';
       })
       .catch((error) => {
         console.log(JSON.stringify(error));

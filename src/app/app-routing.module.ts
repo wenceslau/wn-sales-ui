@@ -6,15 +6,25 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: UserComponent,
+    data: { roles: ['ROLE_HOME'] }
+  },
+  {
     path: 'app',
     component: UserComponent,
     data: { roles: ['ROLE_HOME'] }
   },
   {
-    path: 'payment/:uuid',
+    path: 'payment',
     component: PaymentComponent,
     data: { roles: ['ROLE_HOME'] }
   },
+  {
+    path: 'payment/:id',
+    component: PaymentComponent,
+    data: { roles: ['ROLE_HOME'] }
+  }
 ];
 
 @NgModule({
