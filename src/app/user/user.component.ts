@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
     if (par){
       this.router.navigate(['/payment/'+par]);
     }
+    //ALTERADO
     this.listUser();
     this.listAccount();
     this.listProduct();
